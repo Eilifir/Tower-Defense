@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Antimagic
+  m_Controller: {fileID: 9100000, guid: bd461ed9ada94f54c9091a89f2c57d0c, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: 104825ac79593e740a0f689b00a0ca9b, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 6de4aeb08cfacc541badddcea5c4c1cd, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 2a8220341c357044a9b1429d161ed5ae, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: c3359b45629080544b472394fd7d6375, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 96ee8a0a988504f4298b5a4b45ab46eb, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: b68ebf09b05ad324490ed47bbde53ac9, type: 2}
