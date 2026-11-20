@@ -15,6 +15,7 @@ public class UpdateUIText : MonoBehaviour
         EventManager<GameEvents>.Unsubscribe<GoldChangedEvent>(GameEvents.goldChanged, ChangeGoldText);
         EventManager<GameEvents>.Unsubscribe<LivesChangedEvent>(GameEvents.livesChanged, ChangeLivesText);
     }
+
     void ChangeGoldText(GoldChangedEvent data)
     {
         goldText.text = data.gold.ToString();

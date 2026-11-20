@@ -38,7 +38,7 @@ public static class TowerFlyWeightPointer
         fireInterval = 0.45f,
         bulletSpeed = 5,
         damage = 3,
-        cost = int.MaxValue,
+        cost = 200,
         bulletType = BulletTypes.Arrow,
         towerType = TowerTypes.Archer
     }
@@ -73,7 +73,7 @@ public static class TowerFlyWeightPointer
         fireInterval = 1,
         bulletSpeed = 8,
         damage = 4.75f,
-        cost = int.MaxValue,
+        cost = 220,
         bulletType = BulletTypes.MagicMissile,
         towerType = TowerTypes.Mage
     },
@@ -108,7 +108,7 @@ public static class TowerFlyWeightPointer
         fireInterval = 3,
         bulletSpeed = 2,
         damage = 8,
-        cost = int.MaxValue,
+        cost = 280,
         bulletType = BulletTypes.Catapult,
         towerType = TowerTypes.Aoe
     },

@@ -15,11 +15,18 @@ public class PlayerResources : MonoBehaviour
         EventManager<GameEvents>.Unsubscribe<EnemyDeathEvent>(GameEvents.enemyDeath,AddGold);
         EventManager<GameEvents>.Unsubscribe<EnemyReachedTheEndEvent>(GameEvents.enemyReachedTheEnd, RemoveLives);
     }
+    private void Start()
+    {
+        EventManager<GameEvents>.Publish(GameEvents.livesChanged, new LivesChangedEvent(lives, 0));
+        EventManager<GameEvents>.Publish(GameEvents.goldChanged, new GoldChangedEvent(gold));
+    }
     //I'll use this for when I want to start a level with different parameters
     public void SetResources(int gold, int lives)
     {
         this.gold = gold;
         this.lives = lives;
+        EventManager<GameEvents>.Publish(GameEvents.livesChanged, new LivesChangedEvent(lives, 0));
+        EventManager<GameEvents>.Publish(GameEvents.goldChanged, new GoldChangedEvent(gold));
     }
 
     void RemoveLives(EnemyReachedTheEndEvent data)
