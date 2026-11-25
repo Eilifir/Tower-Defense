@@ -15,7 +15,7 @@ public class TowerTargetingSystem : MonoBehaviour
     SpriteRenderer sr;
 
     public int level { get; private set; } = 0;
-    int maxLevel = 3;
+    public int maxLevel { get; private set; } = 3;
     public BuildSite buildSpot;
 
     private void OnEnable()
@@ -103,7 +103,7 @@ public class TowerTargetingSystem : MonoBehaviour
     }
     public void UpgradeTower()
     {
-        if(level >= maxLevel) return;
+        if(level > maxLevel) return;
         level++;
         sr.sprite = sprites[level];
         TowerFlyWeight data = TowerFlyWeightPointer.Get(towerInfo.towerType, level);

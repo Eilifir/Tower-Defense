@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
@@ -6,6 +7,7 @@ public class BuildButtonsUI : MonoBehaviour
 {
     [SerializeField] GameObject towerIcons;
     [SerializeField] GameObject upgradeIcons;
+    [SerializeField] GameObject upgradeIcon;
     [SerializeField] TowerPlacer towerPlacer;
     [SerializeField] LayerMask towerLayer;
     BuildSite caller;
@@ -40,6 +42,13 @@ public class BuildButtonsUI : MonoBehaviour
     public void TowerClicked(TowerClickedEvent data)
     {
         tower = data.tower;
+        if(tower.level >= tower.maxLevel) upgradeIcon.SetActive(false);
+        else 
+        { 
+            upgradeIcon.SetActive(true); 
+            TowerFlyWeight towerData = TowerFlyWeightPointer.Get(tower.TowerType, tower.level);
+            upgradeIcon.GetComponentInChildren<TextMeshProUGUI>().text = towerData.cost.ToString() + " G";
+        }
         upgradeIcons.transform.position = Camera.main.WorldToScreenPoint(data.position);
         upgradeIcons.SetActive(true);
     }
